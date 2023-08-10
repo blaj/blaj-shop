@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  sql:
+    init:
+      platform: postgres
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/blaj_shop
+    username: blaj_shop_app_user
+    password: Bl@jSh0p
+
+  liquibase:
+    url: jdbc:postgresql://localhost:5432/blaj_shop
+    user: blaj_shop_liquibase_user
+    password: Bl@jSh0p
+    database-change-log-lock-table: database_changelog_lock
+    database-change-log-table: database_changelog
+    liquibase-schema: liquibase
+    change-log: classpath:/db/changelog/db.changelog-master.xml

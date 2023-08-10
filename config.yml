@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  sql:
+    init:
+      platform: postgres
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/managementify
+    username: managementify_app_user
+    password: J3stemM@nagement!fy
+
+  liquibase:
+    url: jdbc:postgresql://localhost:5432/managementify
+    user: managementify_liquibase_user
+    password: J3stemM@nagement!fy
+    database-change-log-lock-table: database_changelog_lock
+    database-change-log-table: database_changelog
+    liquibase-schema: liquibase
+    change-log: classpath:/db/changelog/db/changelog-master.xml
